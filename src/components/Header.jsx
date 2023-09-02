@@ -2,7 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Header({ themeColor }) {
+  const [isMenuOpen, setMenuOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    document.querySelector('html').classList.toggle('menu-open');
+    document.querySelector('html').classList.toggle('lock');
+  }, [isMenuOpen]);
+
   const color = themeColor === 'dark' ? 'fff' : '011F3D';
+
   return (
     <header className="header">
       <div className="header__container">
@@ -83,7 +91,10 @@ export default function Header({ themeColor }) {
           <a href="#" className="button _fill">
             Увійти
           </a>
-          <button type="button" className="menu__icon icon-menu">
+          <button
+            type="button"
+            className="menu__icon icon-menu"
+            onClick={() => setMenuOpen(!isMenuOpen)}>
             <span></span>
           </button>
         </div>
