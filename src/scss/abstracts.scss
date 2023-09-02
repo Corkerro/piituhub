@@ -123,6 +123,7 @@
       margin-left: 20px;
       & li {
         list-style-type: disc;
+        @include adaptiveValue('font-size', 16, 12);
       }
     }
     & .imgs {

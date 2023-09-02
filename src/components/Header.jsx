@@ -3,13 +3,45 @@ import { Link } from 'react-router-dom';
 
 export default function Header({ themeColor }) {
   const [isMenuOpen, setMenuOpen] = React.useState(false);
+  const [isWidth550, setWidth550] = React.useState(false);
 
   React.useEffect(() => {
-    document.querySelector('html').classList.toggle('menu-open');
-    document.querySelector('html').classList.toggle('lock');
+    const handleResize = () => {
+      setWidth550(window.innerWidth >= 500);
+    };
+
+    handleResize(); // Вызываем функцию сразу для инициализации состояния ширины окна
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    if (isMenuOpen) {
+      document.documentElement.classList.add('lock');
+      document.documentElement.classList.add('menu-open');
+    } else {
+      document.documentElement.classList.remove('menu-open');
+      setTimeout(() => {
+        document.documentElement.classList.remove('lock');
+      }, 300);
+    }
   }, [isMenuOpen]);
 
   const color = themeColor === 'dark' ? 'fff' : '011F3D';
+
+  const buttons = (
+    <>
+      <a href="#" className="button _stroke">
+        Зареєструватись
+      </a>
+      <a href="#" className="button _fill">
+        Увійти
+      </a>
+    </>
+  );
 
   return (
     <header className="header">
@@ -81,16 +113,12 @@ export default function Header({ themeColor }) {
                   Освітні програми
                 </a>
               </li>
+              {isWidth550 ? '' : buttons}
             </ul>
           </nav>
         </div>
         <div className="header__buttons">
-          <a href="#" className="button _stroke">
-            Зареєструватись
-          </a>
-          <a href="#" className="button _fill">
-            Увійти
-          </a>
+          {isWidth550 ? buttons : ''}
           <button
             type="button"
             className="menu__icon icon-menu"
