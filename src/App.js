@@ -22,6 +22,7 @@ function App() {
     setThemeColor(themeColor === 'dark' ? 'white' : 'dark');
     document.querySelector('body').classList.add(themeColor === 'dark' ? 'white' : 'dark');
   };
+
   return (
     <Router>
       <div className={`wrapper ${themeColor}`}>

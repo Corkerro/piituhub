@@ -1,8 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
 
 export default function Header({ themeColor }) {
   const [isMenuOpen, setMenuOpen] = React.useState(false);
+  const location = useLocation();
+
+  // Функция, которая будет срабатывать при смене ссылки
+  React.useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
+
   const [isWidth550, setWidth550] = React.useState(false);
 
   React.useEffect(() => {

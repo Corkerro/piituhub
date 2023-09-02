@@ -30,6 +30,18 @@ export default function Abstracts() {
               </div>
               <p>Історія</p>
             </Link>
+            <Link to="/abstracts/history" className="abstracts__subject">
+              <div className="abstracts__subject-top">
+                <img src={history} alt="" />
+              </div>
+              <p>Історія</p>
+            </Link>
+            <Link to="/abstracts/history" className="abstracts__subject">
+              <div className="abstracts__subject-top">
+                <img src={history} alt="" />
+              </div>
+              <p>Історія</p>
+            </Link>
           </div>
         </div>
       </div>
