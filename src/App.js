@@ -8,6 +8,7 @@ import History from './components/abstracts/history';
 import History0209 from './components/abstracts/history/02-09';
 import MainPage from './components/Main/MainPage';
 import Physics0409 from './components/abstracts/physics/04-09';
+import History0409 from './components/abstracts/history/04-09';
 
 function App() {
   const [themeColor, setThemeColor] = useState(localStorage.getItem('themeColor') || 'dark');
@@ -50,6 +51,7 @@ function App() {
           <Route path="/abstracts/physics/02-09" element={<Physics0209 />} />
           <Route path="/abstracts/physics/04-09" element={<Physics0409 />} />
           <Route path="/abstracts/history/02-09" element={<History0209 />} />
+          <Route path="/abstracts/history/04-09" element={<History0409 />} />
         </Routes>
       </div>
     </Router>

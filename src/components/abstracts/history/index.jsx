@@ -25,6 +25,12 @@ export default function History() {
               <p>Предмет дисципліни</p>
               <p>Історія та культура України</p>
             </Link>
+            <Link to="/abstracts/history/04-09" className="abstracts__abstract-card">
+              <h3>04.09</h3>
+              <p>Архаїчна доба на теренах України, витоки укр культури</p>
+              <p>Кам'яний вік</p>
+              <p>Мідно-кам'яний вік (енеоліт) </p>
+            </Link>
           </div>
         </div>
       </div>
