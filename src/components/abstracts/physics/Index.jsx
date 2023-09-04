@@ -26,6 +26,12 @@ export default function Physics() {
               <p>Закон Кулона</p>
               <p>Напруженість електричного поля</p>
             </Link>
+            <Link to="/abstracts/physics/04-09" className="abstracts__abstract-card">
+              <h3>04.09</h3>
+              <p>Напруженість електричного поля</p>
+              <p>Потік напруженості електричного поля</p>
+              <p>Теорема Гаусса</p>
+            </Link>
           </div>
         </div>
       </div>

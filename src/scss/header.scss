@@ -3,6 +3,7 @@
 .header {
   // .header__container
   position: fixed;
+  z-index: 3;
   width: 100%;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -59,6 +60,7 @@
 
   &__body {
     @media (max-width: em(880)) {
+      z-index: 4;
       position: fixed;
       padding-bottom: 30px;
       top: 0;
@@ -109,11 +111,12 @@
   border-radius: 4px;
   transition: color 0.3s ease;
 
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   &._stroke {
     border: 1px solid #cb0102;
     &:hover {
       background: #cb0102;
+      color: #fff;
     }
   }
 
@@ -123,8 +126,10 @@
     border: 1px solid #cb0102;
     background-color: #cb0102;
     color: #fff;
+
     &:hover {
       background: transparent;
+      color: var(--text);
     }
   }
 }
